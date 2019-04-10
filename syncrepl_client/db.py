@@ -179,6 +179,8 @@ class DBInterface(object):
         newbie.__db = sqlite3.connect(self.__data_path,
             detect_types = sqlite3.PARSE_DECLTYPES
         )
+        newbie.__db.execute('PRAGMA synchronous = NORMAL')
+        newbie.__db.execute('PRAGMA journal_mode = WAL')
         return newbie
 
 
