@@ -2,7 +2,7 @@ Some quick notes!
 
 # Clean Local Copy
 
-        python3.6 ./setup.py clean
+        python3.10 ./setup.py clean
         rm -r build dist
 
 # Check Docs

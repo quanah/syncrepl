@@ -57,7 +57,7 @@ change to complete *and propagate* before you restart.
 Changing binds are mentioned here mainly because a changed bind DN is also
 likely to mean a new effective ACL.
 
-Derived Attribites (like memberOf)
+Derived Attributes (like memberOf)
 ==================================
 
 ..

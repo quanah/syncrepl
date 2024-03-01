@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # vim: ts=4 sw=4 et
 
@@ -17,13 +17,7 @@
 # with this distribution, and also at
 # https://github.com/akkornel/syncrepl/blob/master/LICENSE_others.md
 #
-
-
-# Python 2 support
-from __future__ import print_function
-
 from sys import stdout
-
 
 class BaseCallback(object):
     """

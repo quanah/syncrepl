@@ -90,55 +90,23 @@ The Syncrepl client has a number of direct and indirect requirements.
 .. _OpenLDAP: https://www.openldap.org
 .. _ldapsearch: https://linux.die.net/man/1/ldapsearch
 
-* Python 2.7, or Python 3.3.
+* Python 3.10 or later.
 
-  It is likely that Python 2.6 will work, but this has not yet been tested.
-  CentOS 6 users, which have Python 2.6, should consider using Python 3.4 from
-  EPEL.
+* `python-ldap`
 
-  When using Python 3, Python 3.3 or later is required because of `python-ldap`'s (formerly `pyldap`_)
-  requirements (see `issue 117`_).  If you are on a system which has Python 3.2
-  (such as Debian wheezy), consider using Python 2.7 instead.
-
-.. _issue 117: https://github.com/pyldap/pyldap/issues/117
-
-* `python-ldap`_ 99 or later (Python 2), or `python-ldap`_ 3.0.0 or later
-  (Python 3).
-
-  python-ldap is an object-oriented wrapper around `libldap`. pyldap is a fork of
-  python-ldap, which adds support for Python 3. pyldap has been merged back into
-  the python-ldap project.
-
-  pyldap does also work with Python 2, but this software has not been tested
-  with pyldap on Python 2.
-
-  .. warning::
-
-    As of this writing, the latest release of python-ldap is 2.4.41.
-    However, it has a bug which affects us:
-
-    * python-ldap has a bug in which the `ldap.TIMEOUT` exception is not
-      properly raised back to the client.
-
-    The bug has been reported to the python-ldap project.
+  python-ldap is an object-oriented wrapper around `libldap`.
 
 .. _python-ldap: https://www.python-ldap.org
-.. _pyldap: https://github.com/pyldap/pyldap
 
-* The `pyasn1`_ module, at least version 0.2.2, and less than version 0.3.1.
+* The `pyasn1`_ module
 
   In Syncrepl, messages from the LDAP server are encoded using ASN.1.
   `libldap`_ does not decode these for us, so we use the well-established
   `pyasn1`_ module to handle the decoding.
 
-  Technically, this is a requirement of `python-ldap`_ / `pyldap`_.  It is an
-  optional dependency for them, and is only used when using
+  Technically, this is a requirement of `python-ldap`_.  It is an
+  optional dependency for it, and is only used when using
   :mod:`ldap.syncrepl`.  That makes it a requirement for us.
-
-  In version 0.3.1, there were a number of breaking API changes.  This causes
-  occasional exceptions to be thrown.  Until `pyasn1`_ fixes the issue
-  (assuming it's a bug), or `pyldap`_ / `python-ldap`_ change their code,
-  `pyasn1`_ 0.3.1 and later may not be used.
 
 .. _pyasn1: http://pyasn1.sourceforge.net
 

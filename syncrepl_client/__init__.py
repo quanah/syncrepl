@@ -33,12 +33,7 @@ try:
 except ImportError:
     import dummy_threading as threading
 
-# From Python 3.3+, Mapping is in collections.abc.
-# In Python 2, and Python ≤ 3.2, Mapping is in collections.
-if ((version_info[0] == 3) and (version_info[1] >= 3)):
-    from collections.abc import Iterator, Mapping
-else:
-    from collections import Iterator, Mapping
+from collections.abc import Iterator, Mapping
 
 # Bring in some stuff from this package.
 from . import db
@@ -62,7 +57,7 @@ class SyncreplMode(Enum):
     sync with the server.  Once you are in sync,
     :meth:`~syncrepl_client.Syncrepl.poll()` will return :obj:`False`.
     """
-    
+
     REFRESH_AND_PERSIST = 'refreshAndPersist'
     """
     In this mode, you start out doing a refresh.  Once the refresh is complete,

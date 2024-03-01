@@ -93,24 +93,17 @@ Requirements
 
 `syncrepl_client` has four major requirements:
 
-* Python 2.7, or Python 3.3+.
-
-  If you use Python 2.7 or 3.3, you will also need
-  `enum34`_.
+* Python 3.10+.
 
   If you plan on doing "refresh and persist" operations (which run for a long
   time), your Python should support threads.
 
-* An appropriate Python LDAP library:
+* The `python-ldap`_ module
 
-  * For Python 2.7, `python-ldap`_ 99 or later is needed.
+* The `pyasn1`_ module
 
-  * For Python 3, `pyldap`_ 2.4.37 or later is needed.
-
-* The `pyasn1`_ module, at least version 0.2.2, and less than version 0.3.1.
-
-  Technically, this is a requirement of `python-ldap`_ / `pyldap`_.  It is an
-  optional dependency for them, and is only used when using
+  Technically, this is a requirement of `python-ldap`_.  It is an
+  optional dependency for it, and is only used when using
   :mod:`ldap.syncrepl`.  That makes it a requirement for us.
 
 * A fast data store, large enough to store a copy of all the LDAP data
@@ -125,10 +118,9 @@ Lots more details are available on the :doc:`Requirements page </requirements>`.
 
 .. _enum34: https://bitbucket.org/stoneleaf/enum34
 .. _python-ldap: https://www.python-ldap.org
-.. _pyldap: https://github.com/pyldap/pyldap
-.. _pyasn1: http://pyasn1.sourceforge.net
-.. _Section 18.3.1: https://www.openldap.org/doc/admin24/replication.html#Syncrepl
-.. _Admin Guide: https://www.openldap.org/doc/admin24/index.html
+.. _pyasn1: https://pypi.org/project/pyasn1/
+.. _Section 18.3.1: https://www.openldap.org/doc/admin26/replication.html#Syncrepl
+.. _Admin Guide: https://www.openldap.org/doc/admin26/index.html
 
 How to Use
 ==========
